@@ -1,0 +1,116 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "mac_petowners",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "mac_petowner",
+    "Name": "PetOwners",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "importsequencenumber": "Import Sequence Number",
+      "mac_haspassedchecks": "Has Passed Checks",
+      "mac_petowner_AsyncOperations": "System Jobs",
+      "mac_petowner_BulkDeleteFailures": "Bulk Delete Failures",
+      "mac_petowner_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "mac_petowner_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "mac_petowner_ProcessSession": "Process Sessions",
+      "mac_petowner_SyncErrors": "Sync Errors",
+      "mac_petownerid": "PetOwner",
+      "mac_petownername": "Pet Owner Name",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "pl200_mac_Pet_PetOwnerLookup_mac_PetOwner": "Pets",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "PetOwners",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "PetOwners (Ansichten)",
+    "Name": "_mac_petowner_views",
+    "RelatedEntityName": "PetOwners",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "30b24ff5-462f-4059-940f-b94f9712397c": "PetOwner Lookup View",
+      "718f2ce2-09b2-4272-9249-808499320650": "PetOwner Advanced Find View",
+      "71c24bc8-a7e8-4981-82dc-159ac93cd058": "Active PetOwners",
+      "c79d0a84-91ed-4c5c-816c-8d4b24325e31": "PetOwner Associated View",
+      "f24e2436-88fe-4f0f-8b14-612b306b386d": "Inactive PetOwners"
+    }
+  },
+  {
+    "DisplayName": "Has Passed Checks (PetOwners)",
+    "Name": "mac_petowner_mac_haspassedchecks",
+    "OptionSetInfoNameMapping": {
+      "0": "No",
+      "1": "Yes"
+    },
+    "OptionSetIsBooleanValued": true,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "mac_haspassedchecks",
+        "OptionSetReferenceEntityName": "PetOwners"
+      }
+    },
+    "OptionSetTypeKey": "BooleanType",
+    "RelatedColumnInvariantName": "mac_haspassedchecks",
+    "RelatedEntityName": "PetOwners",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status (PetOwners)",
+    "Name": "mac_petowner_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "PetOwners"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "PetOwners",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (PetOwners)",
+    "Name": "mac_petowner_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "PetOwners"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "PetOwners",
+    "Type": "OptionSetInfo"
+  }
+]

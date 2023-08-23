@@ -1,0 +1,122 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "mac_pets",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "mac_pet",
+    "Name": "Pets",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "importsequencenumber": "Import Sequence Number",
+      "mac_breed": "Breed",
+      "mac_breedername": "Breeder Name",
+      "mac_dateofadoption": "Date Of Adoption",
+      "mac_dateofbirth": "Date Of Birth",
+      "mac_hasbeenadopted": "Has Been Adopted",
+      "mac_pet_AsyncOperations": "System Jobs",
+      "mac_pet_BulkDeleteFailures": "Bulk Delete Failures",
+      "mac_pet_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "mac_pet_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "mac_pet_ProcessSession": "Process Sessions",
+      "mac_pet_SyncErrors": "Sync Errors",
+      "mac_petid": "Pet",
+      "mac_petname": "Pet Name",
+      "mac_pettype": "Pet Type",
+      "mac_temppetownername": "Temp Pet Owner Name",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "pl200_PetOwnerLookup": "Pet Owner Lookup",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "Pets",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Pets (Ansichten)",
+    "Name": "_mac_pet_views",
+    "RelatedEntityName": "Pets",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "03060d6a-327d-4da4-8846-ac3c6a682ae0": "Pet Lookup View",
+      "177a9c15-977c-466c-8ce7-2c43a23d0cc0": "Pet Advanced Find View",
+      "30efb615-00ea-42f0-b833-58f3210cdf06": "Active Pets",
+      "7731854f-593d-4538-b93b-cb874de363d3": "Inactive Pets",
+      "dc438065-308a-4f76-87b4-30b84f928272": "Pet Associated View"
+    }
+  },
+  {
+    "DisplayName": "Has Been Adopted (Pets)",
+    "Name": "mac_pet_mac_hasbeenadopted",
+    "OptionSetInfoNameMapping": {
+      "0": "No",
+      "1": "Yes"
+    },
+    "OptionSetIsBooleanValued": true,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "mac_hasbeenadopted",
+        "OptionSetReferenceEntityName": "Pets"
+      }
+    },
+    "OptionSetTypeKey": "BooleanType",
+    "RelatedColumnInvariantName": "mac_hasbeenadopted",
+    "RelatedEntityName": "Pets",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status (Pets)",
+    "Name": "mac_pet_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Pets"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Pets",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (Pets)",
+    "Name": "mac_pet_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Pets"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Pets",
+    "Type": "OptionSetInfo"
+  }
+]

@@ -1,0 +1,439 @@
+"DetailScreen1 As screen.'phoneDetailViewLayout_ver3.0'":
+
+    RectQuickActionBar2 As rectangle:
+        Height: =88
+        Width: =Parent.Width
+        ZIndex: =1
+
+    IconBackarrow1 As icon.ChevronLeft:
+        AccessibleLabel: =Self.Tooltip
+        Height: =88
+        Icon: =Icon.ChevronLeft
+        OnSelect: =Navigate(BrowseScreen1, ScreenTransition.None)
+        PaddingBottom: =24
+        PaddingLeft: =24
+        PaddingRight: =24
+        PaddingTop: =24
+        TabIndex: =0
+        Tooltip: ="Zurück zur Liste"
+        Width: =88
+        ZIndex: =2
+
+    IconEdit1 As icon.Edit:
+        AccessibleLabel: =Self.Tooltip
+        DisplayMode: =If(DataSourceInfo([@Pets], DataSourceInfo.EditPermission), DisplayMode.Edit, DisplayMode.Disabled)
+        Height: =88
+        Icon: =Icon.Edit
+        OnSelect: =EditForm(EditForm1);Navigate(EditScreen1, ScreenTransition.None)
+        PaddingBottom: =24
+        PaddingLeft: =24
+        PaddingRight: =24
+        PaddingTop: =24
+        TabIndex: =0
+        Tooltip: ="Dieses Element bearbeiten"
+        Width: =88
+        X: =Parent.Width - Self.Width
+        ZIndex: =3
+
+    IconDelete1 As icon.Trash:
+        AccessibleLabel: =Self.Tooltip
+        DisplayMode: =If(!IsBlank(BrowseGallery1.Selected) && DataSourceInfo([@Pets], DataSourceInfo.DeletePermission), DisplayMode.Edit, DisplayMode.Disabled)
+        Height: =88
+        Icon: =Icon.Trash
+        OnSelect: =Remove([@Pets], BrowseGallery1.Selected); If (IsEmpty(Errors([@Pets], BrowseGallery1.Selected)), Back())
+        PaddingBottom: =24
+        PaddingLeft: =24
+        PaddingRight: =24
+        PaddingTop: =24
+        TabIndex: =0
+        Tooltip: ="Dieses Element löschen"
+        Width: =88
+        X: =Parent.Width - IconEdit1.Width - Self.Width
+        ZIndex: =4
+
+    LblAppName2 As label:
+        Height: =88
+        Size: =27
+        Text: ="Pets"
+        Width: =Parent.Width - Self.X - IconDelete1.Width - IconEdit1.Width
+        Wrap: =false
+        X: =80
+        ZIndex: =5
+
+    DetailForm1 As formViewer:
+        DataSource: =[@Pets]
+        Height: =Parent.Height - DetailForm1.Y
+        Item: =BrowseGallery1.Selected
+        Width: =Parent.Width
+        Y: =RectQuickActionBar2.Y + RectQuickActionBar2.Height
+        ZIndex: =6
+
+        "'Pet Name_DataCard1' As typedDataCard.textualViewCard":
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="mac_petname"
+            Default: =ThisItem.'Pet Name'
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@Pets],DataSourceInfo.DisplayName,"mac_petname")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =40
+            Required: =false
+            Width: =640
+            X: =0
+            Y: =0
+            ZIndex: =1
+
+            DataCardKey1 As label:
+                AutoHeight: =true
+                Height: =48
+                Size: =21
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue1 As label:
+                AutoHeight: =true
+                DisplayMode: =Parent.DisplayMode
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =21
+                Text: =Parent.Default
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey1.Y + DataCardKey1.Height + 5
+                ZIndex: =2
+
+        Breed_DataCard1 As typedDataCard.textualViewCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="mac_breed"
+            Default: =ThisItem.Breed
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@Pets],DataSourceInfo.DisplayName,"mac_breed")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =40
+            Required: =false
+            Width: =640
+            X: =0
+            Y: =1
+            ZIndex: =1
+
+            DataCardKey2 As label:
+                AutoHeight: =true
+                Height: =48
+                Size: =21
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue2 As label:
+                AutoHeight: =true
+                DisplayMode: =Parent.DisplayMode
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =21
+                Text: =Parent.Default
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey2.Y + DataCardKey2.Height + 5
+                ZIndex: =2
+
+        "'Breeder Name_DataCard1' As typedDataCard.textualViewCard":
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="mac_breedername"
+            Default: =ThisItem.'Breeder Name'
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@Pets],DataSourceInfo.DisplayName,"mac_breedername")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =40
+            Required: =false
+            Width: =640
+            X: =0
+            Y: =2
+            ZIndex: =1
+
+            DataCardKey5 As label:
+                AutoHeight: =true
+                Height: =48
+                Size: =21
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue5 As label:
+                AutoHeight: =true
+                DisplayMode: =Parent.DisplayMode
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =21
+                Text: =Parent.Default
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey5.Y + DataCardKey5.Height + 5
+                ZIndex: =2
+
+        "'Date Of Adoption_DataCard1' As typedDataCard.textualViewCard":
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="mac_dateofadoption"
+            Default: =DateValue(ThisItem.'Date Of Adoption')
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@Pets],DataSourceInfo.DisplayName,"mac_dateofadoption")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =40
+            Required: =false
+            Width: =640
+            X: =0
+            Y: =3
+            ZIndex: =1
+
+            DataCardKey6 As label:
+                AutoHeight: =true
+                Height: =48
+                Size: =21
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue6 As label:
+                AutoHeight: =true
+                DisplayMode: =Parent.DisplayMode
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =21
+                Text: =Parent.Default
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey6.Y + DataCardKey6.Height + 5
+                ZIndex: =2
+
+        "'Date Of Birth_DataCard1' As typedDataCard.textualViewCard":
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="mac_dateofbirth"
+            Default: =DateValue(ThisItem.'Date Of Birth')
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@Pets],DataSourceInfo.DisplayName,"mac_dateofbirth")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =40
+            Required: =false
+            Width: =640
+            X: =0
+            Y: =4
+            ZIndex: =1
+
+            DataCardKey7 As label:
+                AutoHeight: =true
+                Height: =48
+                Size: =21
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue7 As label:
+                AutoHeight: =true
+                DisplayMode: =Parent.DisplayMode
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =21
+                Text: =Parent.Default
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey7.Y + DataCardKey7.Height + 5
+                ZIndex: =2
+
+        "'Has Been Adopted_DataCard1' As typedDataCard.comboBoxOptionSetSingleViewCard":
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="mac_hasbeenadopted"
+            Default: =ThisItem.'Has Been Adopted'
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@Pets],DataSourceInfo.DisplayName,"mac_hasbeenadopted")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            Required: =false
+            Update: =DataCardValue8.Selected
+            Width: =640
+            X: =0
+            Y: =5
+            ZIndex: =1
+
+            DataCardKey8 As label:
+                AutoHeight: =true
+                Height: =48
+                Size: =21
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue8 As combobox:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                DefaultSelectedItems: =[Parent.Default]
+                DisplayFields: =["Value"]
+                DisplayMode: =Parent.DisplayMode
+                Height: =70
+                IsSearchable: =false
+                Items: =Choices('Has Been Adopted (Pets)')
+                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                SearchFields: =["Value"]
+                SearchItems: =[]
+                SelectMultiple: =false
+                Size: =21
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey8.Y + DataCardKey8.Height + 5
+                ZIndex: =2
+
+            ErrorMessage2 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =24
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue8.Y + DataCardValue8.Height
+                ZIndex: =3
+
+            StarVisible2 As label:
+                Align: =Align.Center
+                Height: =DataCardKey8.Height
+                Size: =21
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey8.Y
+                ZIndex: =4
+
+        "'Pet Owner Lookup_DataCard1' As typedDataCard.comboBoxViewCard":
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="pl200_PetOwnerLookup"
+            Default: =ThisItem.'Pet Owner Lookup'
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@Pets],DataSourceInfo.DisplayName,"pl200_PetOwnerLookup")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            Required: =false
+            Update: =DataCardValue9.Selected
+            Width: =640
+            X: =0
+            Y: =6
+            ZIndex: =1
+
+            DataCardKey9 As label:
+                AutoHeight: =true
+                Height: =48
+                Size: =21
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue9 As combobox:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                DefaultSelectedItems: =Parent.Default
+                DisplayFields: =["mac_petownername"]
+                DisplayMode: =Parent.DisplayMode
+                Height: =70
+                Items: =Choices([@Pets].pl200_PetOwnerLookup)
+                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                SearchFields: =["mac_petownername"]
+                SearchItems: =Search(Choices([@Pets].pl200_PetOwnerLookup),DataCardValue9.SearchText,"mac_petownername")
+                SelectMultiple: =false
+                Size: =21
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey9.Y + DataCardKey9.Height + 5
+                ZIndex: =2
+
+            ErrorMessage3 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =24
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue9.Y + DataCardValue9.Height
+                ZIndex: =3
+
+            StarVisible3 As label:
+                Align: =Align.Center
+                Height: =DataCardKey9.Height
+                Size: =21
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey9.Y
+                ZIndex: =4
+
+        "'Pet Type_DataCard1' As typedDataCard.textualViewCard":
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="mac_pettype"
+            Default: =ThisItem.'Pet Type'
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@Pets],DataSourceInfo.DisplayName,"mac_pettype")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =40
+            Required: =false
+            Width: =640
+            X: =0
+            Y: =7
+            ZIndex: =1
+
+            DataCardKey10 As label:
+                AutoHeight: =true
+                Height: =48
+                Size: =21
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue10 As label:
+                AutoHeight: =true
+                DisplayMode: =Parent.DisplayMode
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =21
+                Text: =Parent.Default
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey10.Y + DataCardKey10.Height + 5
+                ZIndex: =2
+

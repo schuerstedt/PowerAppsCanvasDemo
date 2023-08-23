@@ -1,0 +1,18 @@
+{
+  "QualifiedValues": [
+    {
+      "Kind": "default.cds_mac_pet_forms",
+      "Namespace": "Pets (Formulare)",
+      "Values": {
+        "Information": "7e8c7cef-b9e5-473d-b961-da1d33e78a62"
+      }
+    },
+    {
+      "Kind": "default.cds_mac_petowner_forms",
+      "Namespace": "PetOwners (Formulare)",
+      "Values": {
+        "Information": "c6439b76-8b9e-470d-9f90-fd95dadda236"
+      }
+    }
+  ]
+}
